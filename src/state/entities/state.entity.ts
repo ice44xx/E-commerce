@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
-import { Column, Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { CityEntity } from 'src/city/entities/city.entity';
+import { Column, Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, OneToMany, OneToOne } from 'typeorm';
 
 @Entity({ name: 'state' })
 export class StateEntity {
@@ -14,4 +15,7 @@ export class StateEntity {
 
   @UpdateDateColumn({name: 'updated_at'})
   updatedAt: Date;
+
+  @OneToOne (() => CityEntity, (city) => city.state)
+  city?: CityEntity[]
 }

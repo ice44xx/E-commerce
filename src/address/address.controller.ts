@@ -1,5 +1,5 @@
 import { Controller, Param, Post, UsePipes, ValidationPipe, Body } from '@nestjs/common';
-import { CreateAddressDto } from './dtos/createAdress.dto';
+import { CreateAddressDto } from './dtos/createAddress.dto';
 import { AddressService } from './address.service';
 import { AddressEntity } from './entities/address.entity';
 
